@@ -20,7 +20,7 @@ bmiest.be serves three audiences equally (confirmed 2026-10-07); none leads:
 
 ## Product Purpose
 
-bmiest's front door: a link hub plus a personal portfolio. It says who bmiest is, carries the links (Twitch, Twitch clips, GitHub, Race to Dutch First) and shows the projects with short write-ups. Success: any of the three audiences finds what they came for, the channel, a project or the person behind them, without hunting.
+bmiest's front door: a link hub plus a personal portfolio. It says who bmiest is, carries the links (Twitch, YouTube, Twitch clips, GitHub, Race to Dutch First) and shows the projects with short write-ups. Success: any of the three audiences finds what they came for, the channel, a project or the person behind them, without hunting.
 
 ## Positioning
 
@@ -40,7 +40,8 @@ Everything on it is built by a raiding streamer for their own raids and stream, 
   - Race to Dutch First: `racetodutchfirst.nl`; the repo is private. The race site itself stays brand-neutral.
   - WoWAudit wishlist updater: `wishlistupdater.bmiest.be`, repo Bmiest/bmiest_wowaudit_wishlist_updater (public). The dashboard is for the operator.
   - Design system: Bmiest/bmiest-design (public); `design.bmiest.be` is planned and not live.
-- **Links:** Twitch (`twitch.tv/bmiest`), Twitch clips (`twitch.tv/bmiest/clips`, in place of YouTube), GitHub (`github.com/Bmiest`), Race to Dutch First. No Discord.
+- **Links:** Twitch (`twitch.tv/bmiest`), YouTube (`youtube.com/@bmiest`, added 2026-10-07), Twitch clips (`twitch.tv/bmiest/clips`), GitHub (`github.com/Bmiest`), Race to Dutch First. No Discord.
+- **The tools lead (user, 2026-10-07):** the page is as much about the tools built as about the stream; it opens on a hub of all four tools.
 - **Live on load:** the LIVE state from DecAPI, the race standing from racetodutchfirst.nl's `race.json`, Shiftheal from Raider.IO; every block falls back to static content when a fetch fails.
 
 ## Brand Commitments

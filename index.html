@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://render.worldofwarcraft.com; connect-src https://decapi.me https://raider.io https://racetodutchfirst.nl; base-uri 'none'; form-action 'none'">
 <title>bmiest · World of Warcraft on Twitch</title>
-<meta name="description" content="bmiest: Mythic raiding with Kelderklasse on Twitch every Wednesday and Sunday, and the tools behind the stream: the overlay, Race to Dutch First, the wishlist updater and the design language.">
+<meta name="description" content="bmiest: a World of Warcraft raider on Twitch and YouTube, and the tools behind the stream: an OBS overlay, Race to Dutch First, a WoWAudit wishlist updater and the design language that ties them together.">
 <meta name="theme-color" content="#0a0b0d">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bmiest.be/">
 <meta property="og:title" content="bmiest · World of Warcraft on Twitch">
-<meta property="og:description" content="Mythic raiding with Kelderklasse, Wednesday and Sunday 20:00, and the tools behind the stream.">
+<meta property="og:description" content="The tools behind a raiding stream: the overlay, Race to Dutch First, the wishlist updater and the design language. Live Wed + Sun 20:00 on Twitch.">
 <meta property="og:image" content="https://bmiest.be/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -33,6 +33,7 @@
   <symbol id="i-twitch" viewBox="0 0 24 24"><path d="M4 3h17v11l-5 5h-4l-3 3H7v-3H3V7zM6 5v11h3v3l3-3h4l3-3V5zm5 3h2v5h-2zm5 0h2v5h-2z" fill="currentColor"/></symbol>
   <symbol id="i-clips" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM5 7v10h14V7zm5 2 5 3-5 3z" fill="currentColor"/></symbol>
   <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M22 7.4a3 3 0 0 0-2.1-2.1C18 4.8 12 4.8 12 4.8s-6 0-7.9.5A3 3 0 0 0 2 7.4 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 4.6 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.6 31 31 0 0 0-.4-4.6zM10 15.2V8.8l5.2 3.2z" fill="currentColor"/></symbol>
   <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></symbol>
   <symbol id="i-cast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><path d="M7.4 7.4a6.5 6.5 0 0 0 0 9.2M16.6 7.4a6.5 6.5 0 0 1 0 9.2M4.6 4.6a10.5 10.5 0 0 0 0 14.8M19.4 4.6a10.5 10.5 0 0 1 0 14.8" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
@@ -60,12 +61,18 @@
   <!-- Left: who, and the encounter list. -->
   <div class="index">
     <h1 class="poster index__name">bmiest</h1>
-    <p class="index__lead" data-i18n="lead">World of Warcraft raider on Twitch. Mythic progression with Kelderklasse, and the tools behind the stream, built by hand.</p>
+    <p class="index__lead" data-i18n="lead">World of Warcraft raider on Twitch who builds the tools behind the stream, and shows them here.</p>
 
     <nav class="journal" aria-labelledby="journalLabel">
       <h2 class="journal__label" id="journalLabel" data-i18n="journal">Adventure Guide</h2>
       <ol class="journal__list" id="journal">
-        <li><a class="enc" id="tab-stream" href="#stream" aria-current="true">
+        <li><a class="enc" id="tab-hub" href="#hub" aria-current="true">
+          <span class="enc__bar"><span class="enc__in">
+            <span class="enc__head enc__head--mark"><img src="img/heads/hub.svg" width="32" height="32" alt=""></span>
+            <span class="enc__t"><span class="enc__n" data-i18n="e.hub">Overview</span><span class="enc__s" data-i18n="e.hub.s">4 tools · 1 stream</span></span>
+          </span></span>
+        </a></li>
+        <li><a class="enc" id="tab-stream" href="#stream">
           <span class="enc__bar"><span class="enc__in">
             <span class="enc__head enc__head--live"><img src="img/heads/stream.png" width="128" height="128" alt=""></span>
             <span class="enc__t"><span class="enc__n" data-i18n="e.stream">The stream</span><span class="enc__s" id="encStreamSub" data-i18n="e.stream.s">Wed + Sun · 20:00</span></span>
@@ -102,6 +109,41 @@
   <!-- Right: one entry at a time on wide screens, all of them stacked on phones. -->
   <div class="stage" id="stage">
 
+    <article class="entry entry--hub" id="hub" aria-labelledby="h-hub">
+      <div class="art art--board">
+        <ul class="board">
+          <li><a class="plate" href="#overlay"><span class="plate__in">
+            <img class="plate__shot" src="img/shots/overlay.webp" width="1440" height="810" alt="" decoding="async">
+            <span class="plate__cap"><span class="plate__head"><img src="img/heads/overlay.png" width="128" height="128" alt=""></span><span class="plate__t"><span class="plate__n" data-i18n="e.overlay">Stream overlay</span><span class="plate__s" data-i18n="s.overlay">The OBS overlay the stream runs on</span></span></span>
+          </span></a></li>
+          <li><a class="plate" href="#race"><span class="plate__in">
+            <img class="plate__shot" src="img/shots/race.webp" width="1440" height="900" alt="" decoding="async">
+            <span class="plate__cap"><span class="plate__head plate__head--mark"><img src="img/heads/race.svg" width="32" height="32" alt=""></span><span class="plate__t"><span class="plate__n">Race to Dutch First</span><span class="plate__s" data-i18n="s.race">Live race of Dutch guilds to Cutting Edge</span></span></span>
+          </span></a></li>
+          <li><a class="plate" href="#wishlist"><span class="plate__in">
+            <img class="plate__shot" src="img/shots/wishlist.webp" width="1440" height="900" alt="" decoding="async">
+            <span class="plate__cap"><span class="plate__head plate__head--mark"><img src="img/heads/wishlist.svg" width="32" height="32" alt=""></span><span class="plate__t"><span class="plate__n" data-i18n="e.wishlist">Wishlist updater</span><span class="plate__s" data-i18n="s.wishlist">Your WoWAudit wishlist, filled in daily</span></span></span>
+          </span></a></li>
+          <li><a class="plate" href="#design"><span class="plate__in">
+            <img class="plate__shot" src="img/shots/design.webp" width="1440" height="884" alt="" decoding="async">
+            <span class="plate__cap"><span class="plate__head plate__head--mark"><img src="img/heads/design.svg" width="32" height="32" alt=""></span><span class="plate__t"><span class="plate__n" data-i18n="e.design">Design language</span><span class="plate__s" data-i18n="s.design">One look for all of it, this page too</span></span></span>
+          </span></a></li>
+        </ul>
+      </div>
+      <div class="entry__body">
+        <div class="entry__text">
+          <h2 class="entry__h" id="h-hub"><span data-i18n="h.hubA">Built for the raid,</span> <em data-i18n="h.hubB">by the raider</em></h2>
+          <p class="entry__p" data-i18n="p.hub">Everything here runs for real on raid nights: the overlay on stream, the race on Dutch guilds' screens, the wishlist before every raid. Pick a tool to see it running.</p>
+        </div>
+        <ul class="loot loot--row">
+          <li><a class="btn js-watch" href="https://www.twitch.tv/bmiest"><svg aria-hidden="true"><use href="#i-twitch"/></svg><span class="js-watch-label" data-i18n="watch">Watch on Twitch</span></a></li>
+          <li><a class="drop" href="https://www.youtube.com/@bmiest"><svg aria-hidden="true"><use href="#i-youtube"/></svg><span>YouTube</span></a></li>
+          <li><a class="drop" href="https://www.twitch.tv/bmiest/clips"><svg aria-hidden="true"><use href="#i-clips"/></svg><span data-i18n="clips">Clips</span></a></li>
+          <li><a class="drop" href="https://github.com/Bmiest"><svg aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
+        </ul>
+      </div>
+    </article>
+
     <article class="entry entry--stream" id="stream" aria-labelledby="h-stream">
       <div class="art art--char" aria-hidden="true">
         <div class="glow glow--void"></div>
@@ -121,7 +163,8 @@
           </ul>
         </div>
         <ul class="loot">
-          <li><a class="btn" id="watchBtn" href="https://www.twitch.tv/bmiest"><svg aria-hidden="true"><use href="#i-twitch"/></svg><span id="watchLabel" data-i18n="watch">Watch on Twitch</span></a></li>
+          <li><a class="btn js-watch" href="https://www.twitch.tv/bmiest"><svg aria-hidden="true"><use href="#i-twitch"/></svg><span class="js-watch-label" data-i18n="watch">Watch on Twitch</span></a></li>
+          <li><a class="drop" href="https://www.youtube.com/@bmiest"><svg aria-hidden="true"><use href="#i-youtube"/></svg><span>YouTube</span></a></li>
           <li><a class="drop" href="https://www.twitch.tv/bmiest/clips"><svg aria-hidden="true"><use href="#i-clips"/></svg><span data-i18n="clips">Clips</span></a></li>
           <li><a class="drop" href="https://github.com/Bmiest"><svg aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
         </ul>
@@ -242,6 +285,7 @@
   <p class="foot__sig"><span class="foot__mark" aria-hidden="true"><svg><use href="#i-cast"/></svg></span><span data-i18n="foot">bmiest · built by hand in the bmiest design language</span></p>
   <ul class="foot__links">
     <li><a href="https://www.twitch.tv/bmiest">Twitch</a></li>
+    <li><a href="https://www.youtube.com/@bmiest">YouTube</a></li>
     <li><a href="https://www.twitch.tv/bmiest/clips" data-i18n="clips">Clips</a></li>
     <li><a href="https://github.com/Bmiest">GitHub</a></li>
     <li><a href="https://github.com/Bmiest/bmiest_landing" data-i18n="pageSource">This page's source</a></li>

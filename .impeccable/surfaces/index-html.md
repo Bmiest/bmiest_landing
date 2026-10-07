@@ -24,3 +24,7 @@ FIRST VIEWPORT: bug across the top (LIVE · bmiest · Kelderklasse · Wo+Zo 20:0
 FORM: Adventure Guide, position 5 of 7 on the grounded list (dealt lead), seed key b3d0ab64. Signature interaction: choosing an encounter swaps the stage, the art sliding in from the model viewer's right edge with a clip-path wipe along the family slant; the hash (#overlay) makes every entry linkable. On phones every entry stacks as its own section and the list becomes a jump strip.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Change 2026-10-07: the hub opening
+
+User: the page should be as much about the tools as the stream, the OG should picture the hub, and YouTube joins the links. Chosen: "Hub opening". The guide opens on an Overview entry: the four tools as plates on a 2 x 2 board (real shots, one line each, each opening its entry), "Built for the raid, by the raider", and the channel loot (Watch on Twitch, YouTube, Clips, GitHub). The stream moved to its own entry, unchanged. og.png is a capture of that hub view. The direction contract above still holds; the FIRST VIEWPORT block now reads with the hub in the stage instead of the stream art.
