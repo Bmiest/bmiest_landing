@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://render.worldofwarcraft.com; connect-src https://decapi.me https://raider.io https://racetodutchfirst.nl; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://stats.bmiest.be; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://render.worldofwarcraft.com; connect-src https://decapi.me https://raider.io https://racetodutchfirst.nl https://stats.bmiest.be; base-uri 'none'; form-action 'none'">
 <title>bmiest · World of Warcraft on Twitch</title>
 <meta name="description" content="bmiest: a World of Warcraft raider on Twitch and YouTube, and the tools behind the stream: an OBS overlay, Race to Dutch First, a WoWAudit wishlist updater and the design language that ties them together.">
 <meta name="theme-color" content="#0a0b0d">
@@ -24,6 +24,9 @@
 <script src="js/i18n.js" defer></script>
 <script src="js/bossart.js" defer></script>
 <script src="js/site.js" defer></script>
+<!-- Visitor stats: self-hosted Umami (senate), cookieless, no IPs stored, so no banner.
+     data-domains: only the live site counts, never a local copy. -->
+<script defer src="https://stats.bmiest.be/script.js" data-website-id="c39e5f14-ee67-4e79-9492-bfcdee82e215" data-domains="bmiest.be"></script>
 </head>
 <body>
 <a class="skip" href="#guide" data-i18n="skip">Skip to the guide</a>
