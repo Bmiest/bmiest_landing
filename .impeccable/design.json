@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T12:55:12+00:00",
+  "title": "Design System: bmiest.be",
+  "extensions": {
+    "designLanguage": {
+      "version": 2,
+      "surface": "index.html",
+      "familyRepo": "Bmiest/bmiest-design",
+      "scopeNote": "family = shared v2 language, must match the family DESIGN.md; landing = this page only. tokens.css is a byte copy of the overlay's.",
+      "finishReview": "Reviewer disposition 'fix' across two verdict rounds; every scored fix resolved except the mobile design-specimen plate, which was then fixed (plate inset onto the specimen panel, URL hidden on phones) without a further verdict round.",
+      "notCanonized": [
+        "10px live-red 'on air' tag before the live stream title (3.8:1 on ink-900): a legibility defect the build carries, not a pattern.",
+        "Hard-coded #5aa9ff guild accent in the specimen ribbon: a one-off stand-in, not a token."
+      ]
+    },
+    "colorMeta": {
+      "jade": {
+        "role": "primary",
+        "displayName": "Mistweaver Jade",
+        "scope": "family",
+        "tonalRamp": [
+          "oklch(15% 0.15 165)",
+          "oklch(25% 0.15 165)",
+          "oklch(35% 0.15 165)",
+          "oklch(48% 0.15 165)",
+          "oklch(60% 0.15 165)",
+          "oklch(72% 0.15 165)",
+          "oklch(84% 0.15 165)",
+          "oklch(95% 0.15 165)"
+        ],
+        "purpose": "Brand and selection: bug mark and day block, active language, selected encounter, primary button, loot icons, ticker label and edge, links, focus."
+      },
+      "jade-ghost": {
+        "role": "primary",
+        "displayName": "Jade Ghost",
+        "scope": "family",
+        "tonalRamp": [
+          "oklch(15% 0.15 165)",
+          "oklch(25% 0.15 165)",
+          "oklch(35% 0.15 165)",
+          "oklch(48% 0.15 165)",
+          "oklch(60% 0.15 165)",
+          "oklch(72% 0.15 165)",
+          "oklch(84% 0.15 165)",
+          "oklch(95% 0.15 165)"
+        ],
+        "purpose": "Link underlines and text selection only."
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Podium Gold",
+        "scope": "family",
+        "tonalRamp": [
+          "oklch(15% 0.1 85)",
+          "oklch(25% 0.1 85)",
+          "oklch(35% 0.1 85)",
+          "oklch(48% 0.1 85)",
+          "oklch(60% 0.1 85)",
+          "oklch(72% 0.1 85)",
+          "oklch(84% 0.1 85)",
+          "oklch(95% 0.1 85)"
+        ],
+        "purpose": "Earned only: race leader, Cutting Edge, first Dutch kill."
+      },
+      "live-red": {
+        "role": "tertiary",
+        "displayName": "Broadcast Red",
+        "scope": "family",
+        "tonalRamp": [
+          "oklch(15% 0.17 23)",
+          "oklch(25% 0.17 23)",
+          "oklch(35% 0.17 23)",
+          "oklch(48% 0.17 23)",
+          "oklch(60% 0.17 23)",
+          "oklch(72% 0.17 23)",
+          "oklch(84% 0.17 23)",
+          "oklch(95% 0.17 23)"
+        ],
+        "purpose": "On air only: LIVE block, live Watch button, live ring on the stream head."
+      },
+      "rose": {
+        "role": "tertiary",
+        "displayName": "Faded Rose",
+        "scope": "family",
+        "tonalRamp": [
+          "oklch(15% 0.08 20)",
+          "oklch(25% 0.08 20)",
+          "oklch(35% 0.08 20)",
+          "oklch(48% 0.08 20)",
+          "oklch(60% 0.08 20)",
+          "oklch(72% 0.08 20)",
+          "oklch(84% 0.08 20)",
+          "oklch(95% 0.08 20)"
+        ],
+        "purpose": "Late or failed; here only its specimen tile."
+      },
+      "void-glow": {
+        "role": "neutral",
+        "displayName": "Void Glow",
+        "scope": "landing",
+        "canonical": "rgba(150,90,255,.28) (site.css fallback; tokens.css defines no --void-glow)",
+        "tonalRamp": [
+          "oklch(15% 0.2 295)",
+          "oklch(25% 0.2 295)",
+          "oklch(35% 0.2 295)",
+          "oklch(48% 0.2 295)",
+          "oklch(60% 0.2 295)",
+          "oklch(72% 0.2 295)",
+          "oklch(84% 0.2 295)",
+          "oklch(95% 0.2 295)"
+        ],
+        "purpose": "Violet radial behind the stream entry's boss."
+      },
+      "jade-glow": {
+        "role": "neutral",
+        "displayName": "Jade Glow",
+        "scope": "landing",
+        "tonalRamp": [
+          "oklch(15% 0.15 165)",
+          "oklch(25% 0.15 165)",
+          "oklch(35% 0.15 165)",
+          "oklch(48% 0.15 165)",
+          "oklch(60% 0.15 165)",
+          "oklch(72% 0.15 165)",
+          "oklch(84% 0.15 165)",
+          "oklch(95% 0.15 165)"
+        ],
+        "purpose": "Jade radial behind Shiftheal."
+      },
+      "ink-900": {
+        "role": "neutral",
+        "displayName": "Raid Night Black",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-850": {
+        "role": "neutral",
+        "displayName": "Table Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-800": {
+        "role": "neutral",
+        "displayName": "Panel Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-750": {
+        "role": "neutral",
+        "displayName": "Raised Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-700": {
+        "role": "neutral",
+        "displayName": "Rule Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-600": {
+        "role": "neutral",
+        "displayName": "Outline Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-500": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-400": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-300": {
+        "role": "neutral",
+        "displayName": "Caption Grey",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "ink-200": {
+        "role": "neutral",
+        "displayName": "Soft Grey",
+        "scope": "family",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#131519",
+          "#1e2228",
+          "#2a2f37",
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "scope": "family",
+        "tonalRamp": [
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc",
+          "#c9d0d8",
+          "#dde2e8",
+          "#eef1f5",
+          "#f6f8fa"
+        ]
+      },
+      "paper-dim": {
+        "role": "neutral",
+        "displayName": "Faded Paper",
+        "scope": "family",
+        "tonalRamp": [
+          "#3a414b",
+          "#5b6470",
+          "#818b98",
+          "#a8b1bc",
+          "#c9d0d8",
+          "#dde2e8",
+          "#eef1f5",
+          "#f6f8fa"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "BMIEST once, poster caps."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Entry titles, second half jade."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The one line under the name."
+      },
+      "entry": {
+        "displayName": "Entry",
+        "purpose": "An entry's two lines."
+      },
+      "encounter": {
+        "displayName": "Encounter",
+        "purpose": "Encounter names in the list."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary button."
+      },
+      "loot": {
+        "displayName": "Loot",
+        "purpose": "Loot rows."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Page base, ticker items."
+      },
+      "bug": {
+        "displayName": "Bug",
+        "purpose": "Broadcast bug blocks."
+      },
+      "ability-value": {
+        "displayName": "Ability value",
+        "purpose": "Ability chip values."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Pills, ability keys, journal heading."
+      },
+      "label-micro": {
+        "displayName": "Label micro",
+        "purpose": "Ticker tags."
+      },
+      "numeric": {
+        "displayName": "Numeric",
+        "purpose": "URLs, dates, compared counts."
+      }
+    },
+    "shadows": [
+      {
+        "name": "live-dot-ring",
+        "value": "0 0 0 2px var(--paper)",
+        "purpose": "Drawn ring around the LIVE dot; not elevation."
+      },
+      {
+        "name": "live-head-ring",
+        "value": "inset 0 0 0 2px var(--live-red)",
+        "purpose": "Stream encounter head while live; not elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.22,.61,.36,1)",
+        "purpose": "tokens.css --ease; hover and state transitions."
+      },
+      {
+        "name": "t-fast",
+        "value": "160ms",
+        "purpose": "Hover/selection colour transitions."
+      },
+      {
+        "name": "t-slow",
+        "value": "420ms",
+        "purpose": "Boss art cross-fade."
+      },
+      {
+        "name": "stage-wipe",
+        "value": "620ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Art wipes in along the family slant on encounter change."
+      },
+      {
+        "name": "stage-rise",
+        "value": "520ms 90ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Entry body rises 14px after the wipe."
+      },
+      {
+        "name": "live-pulse",
+        "value": "1.6s",
+        "purpose": "LIVE dot pulse; off under reduced motion."
+      },
+      {
+        "name": "ticker-run",
+        "value": "9s per kill, min 28s, linear",
+        "purpose": "Ticker loop; pauses on hover/focus, static under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "guide",
+        "value": "1100px"
+      },
+      {
+        "name": "phone",
+        "value": "720px"
+      },
+      {
+        "name": "narrow",
+        "value": "400px"
+      },
+      {
+        "name": "tiny",
+        "value": "350px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The slanted jade primary, one per entry (Watch on Twitch).",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 3h17v11l-5 5h-4l-3 3H7v-3H3V7zM6 5v11h3v3l3-3h4l3-3V5zm5 3h2v5h-2zm5 0h2v5h-2z\" fill=\"currentColor\"/></svg>Watch on Twitch</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 32px 0 22px;background:var(--jade,#3fd9a4);color:var(--ink-900,#0a0b0d);font-family:var(--f-display,'Outfit',sans-serif);font-size:15px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);transition:background 160ms cubic-bezier(.22,.61,.36,1)}.ds-btn svg{width:20px;height:20px}.ds-btn:hover{background:var(--paper,#eef1f5)}.ds-btn:focus-visible{outline:2px solid var(--jade,#3fd9a4);outline-offset:3px}"
+    },
+    {
+      "name": "Primary Button (live)",
+      "kind": "button",
+      "refersTo": "button-primary-live",
+      "description": "The same button while the channel is live.",
+      "html": "<a class=\"ds-btn-live\" href=\"#\">Live now · watch</a>",
+      "css": ".ds-btn-live{display:inline-flex;align-items:center;height:52px;padding:0 32px 0 22px;background:var(--live-red,#c93339);color:var(--paper,#eef1f5);font-family:var(--f-display,'Outfit',sans-serif);font-size:15px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);}.ds-btn-live:hover{background:var(--paper,#eef1f5);color:var(--live-red,#c93339)}.ds-btn-live:focus-visible{outline:2px solid var(--jade,#3fd9a4);outline-offset:3px}"
+    },
+    {
+      "name": "Loot Row",
+      "kind": "button",
+      "refersTo": "loot-drop",
+      "description": "Secondary link: slanted ink chip with a jade drawn icon.",
+      "html": "<a class=\"ds-drop\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 5h18v14H3zM5 7v10h14V7zm5 2 5 3-5 3z\" fill=\"currentColor\"/></svg>Clips</a>",
+      "css": ".ds-drop{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 28px 0 18px;background:var(--ink-750,#171a1f);color:var(--paper,#eef1f5);font-family:var(--f-display,'Outfit',sans-serif);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);transition:background 160ms,color 160ms}.ds-drop svg{width:18px;height:18px;color:var(--jade,#3fd9a4)}.ds-drop:hover{background:var(--ink-600,#2a2f37);color:var(--jade,#3fd9a4)}.ds-drop:focus-visible{outline:2px solid var(--jade,#3fd9a4);outline-offset:3px}"
+    },
+    {
+      "name": "Encounter",
+      "kind": "nav",
+      "refersTo": "encounter",
+      "description": "An Adventure Guide entry in the list; jade outline when selected.",
+      "html": "<a class=\"ds-enc\" href=\"#\" aria-current=\"true\"><span class=\"ds-enc__bar\"><span class=\"ds-enc__in\"><span class=\"ds-enc__head\"></span><span class=\"ds-enc__t\"><span class=\"ds-enc__n\">Stream overlay</span><span class=\"ds-enc__s\">streamoverlay.bmiest.be</span></span></span></span></a><a class=\"ds-enc\" href=\"#\"><span class=\"ds-enc__bar\"><span class=\"ds-enc__in\"><span class=\"ds-enc__head\"></span><span class=\"ds-enc__t\"><span class=\"ds-enc__n\">Race to Dutch First</span><span class=\"ds-enc__s\">racetodutchfirst.nl</span></span></span></span></a>",
+      "css": ".ds-enc{display:block;width:360px;margin-bottom:8px;color:var(--paper,#eef1f5);text-decoration:none;font-family:var(--f-display,'Outfit',sans-serif)}.ds-enc__bar{display:block;height:66px;padding:1px;background:var(--ink-600,#2a2f37);clip-path: polygon(0 0, 100% 0, calc(100% - 11px) 100%, 0 100%);transition:background 160ms}.ds-enc__in{height:100%;display:flex;align-items:center;background:var(--ink-800,#131519);clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);padding-right:26px}.ds-enc__head{flex:0 0 60px;height:100%;background:var(--ink-750,#171a1f);clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);}.ds-enc__t{display:grid;gap:1px;padding-left:14px}.ds-enc__n{font-size:18px;font-weight:700;line-height:1.15}.ds-enc__s{font-size:12px;color:var(--ink-300,#818b98)}.ds-enc:hover .ds-enc__bar{background:var(--ink-400,#5b6470)}.ds-enc:focus-visible{outline:0}.ds-enc:focus-visible .ds-enc__bar{background:var(--paper,#eef1f5)}.ds-enc[aria-current=true] .ds-enc__bar{background:var(--jade,#3fd9a4)}.ds-enc[aria-current=true] .ds-enc__in{background:var(--ink-750,#171a1f)}.ds-enc[aria-current=true] .ds-enc__head{background:var(--ink-700,#1e2228)}.ds-enc[aria-current=true] .ds-enc__s{color:var(--jade,#3fd9a4)}"
+    },
+    {
+      "name": "Broadcast Bug",
+      "kind": "custom",
+      "refersTo": "bug-name",
+      "description": "Flush square blocks: LIVE (only while live), jade mark, name, guild slot, raid days.",
+      "html": "<div class=\"ds-bug\"><span class=\"ds-bug__live\"><i></i>Live</span><span class=\"ds-bug__mark\"></span><span class=\"ds-bug__name\">bmiest</span><span class=\"ds-bug__slot\">Kelderklasse</span><span class=\"ds-bug__day\">Wed + Sun 20:00</span></div>",
+      "css": ".ds-bug{display:flex;height:40px;font-family:var(--f-display,'Outfit',sans-serif);font-weight:800;text-transform:uppercase}.ds-bug>span{display:flex;align-items:center;gap:9px;white-space:nowrap}.ds-bug__live{padding:0 18px;background:var(--live-red,#c93339);color:var(--paper,#eef1f5);font-size:13px;letter-spacing:.14em}.ds-bug__live i{width:8px;height:8px;border-radius:999px;background:rgba(238,241,245,.27);box-shadow:0 0 0 2px var(--paper,#eef1f5)}.ds-bug__mark{width:40px;background:var(--jade,#3fd9a4)}.ds-bug__name{padding:0 20px;background:var(--ink-900,#0a0b0d);color:var(--paper,#eef1f5);font-size:14px;letter-spacing:.1em}.ds-bug__slot{padding:0 18px;background:var(--ink-750,#171a1f);color:var(--paper-dim,#c9d0d8);font-size:13px;letter-spacing:.08em}.ds-bug__day{padding:0 18px;background:var(--jade,#3fd9a4);color:var(--ink-900,#0a0b0d);font-size:13px;letter-spacing:.08em}"
+    },
+    {
+      "name": "Language Switch",
+      "kind": "chip",
+      "refersTo": "lang-block",
+      "description": "NL | EN as two flush blocks; active one solid jade.",
+      "html": "<div class=\"ds-lang\"><button aria-pressed=\"false\">NL</button><button aria-pressed=\"true\">EN</button></div>",
+      "css": ".ds-lang{display:inline-flex;height:40px}.ds-lang button{font-family:var(--f-display,'Outfit',sans-serif);font-size:13px;font-weight:800;letter-spacing:.12em;padding:0 14px;border:0;background:var(--ink-900,#0a0b0d);color:var(--ink-300,#818b98);cursor:pointer}.ds-lang button:hover{color:var(--paper,#eef1f5)}.ds-lang button[aria-pressed=true]{background:var(--jade,#3fd9a4);color:var(--ink-900,#0a0b0d)}.ds-lang button:focus-visible{outline:2px solid var(--jade,#3fd9a4);outline-offset:3px}"
+    },
+    {
+      "name": "Pill",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Slanted ink chip in label type; jade variant.",
+      "html": "<span class=\"ds-pill\">Live site</span> <span class=\"ds-pill ds-pill--jade\">Cutting Edge</span>",
+      "css": ".ds-pill{display:inline-flex;align-items:center;padding:6px 15px 6px 11px;font-family:var(--f-display,'Outfit',sans-serif);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--ink-750,#171a1f);color:var(--ink-200,#a8b1bc);clip-path: polygon(0 0, 100% 0, calc(100% - 6px) 100%, 0 100%);}.ds-pill--jade{color:var(--jade,#3fd9a4)}"
+    },
+    {
+      "name": "Abilities",
+      "kind": "chip",
+      "refersTo": "ability-key",
+      "description": "Flush key/value chips; earned words gold.",
+      "html": "<ul class=\"ds-abil\"><li><span class=\"ds-abil__k\">Standing</span><span class=\"ds-abil__v\">#1 <b>Kelderklasse</b> · <span class=\"ds-mono\">6/8</span></span></li><li><span class=\"ds-abil__k\">Refresh</span><span class=\"ds-abil__v\">30 min on raid nights</span></li></ul>",
+      "css": ".ds-abil{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;font-family:var(--f-display,'Outfit',sans-serif)}.ds-abil li{display:flex;height:30px}.ds-abil__k,.ds-abil__v{display:flex;align-items:center;gap:4px;padding:0 11px;white-space:nowrap}.ds-abil__k{background:var(--ink-750,#171a1f);color:var(--ink-200,#a8b1bc);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.ds-abil__v{background:var(--ink-800,#131519);color:var(--paper,#eef1f5);font-size:13px;font-weight:600;padding-right:20px;clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);}.ds-abil__v b{color:var(--gold,#d8b263)}.ds-mono{font-family:var(--f-mono,'JetBrains Mono',monospace);font-variant-numeric:tabular-nums;font-size:12px}"
+    },
+    {
+      "name": "Kills Ticker",
+      "kind": "custom",
+      "refersTo": "ticker",
+      "description": "Edge-to-edge band, 2px jade top edge, flush jade label (static snapshot).",
+      "html": "<div class=\"ds-tick\"><span class=\"ds-tick__l\">Mythic kills</span><span class=\"ds-tick__i\"><em class=\"g\">First Dutch kill</em><b>Boss</b><span class=\"ds-mono\">4 Oct</span></span><span class=\"ds-tick__i\"><em>Mythic</em><b>Boss</b><span class=\"ds-mono\">1 Oct</span></span></div>",
+      "css": ".ds-tick{display:flex;height:52px;overflow:hidden;background:var(--ink-900,#0a0b0d);border-top:2px solid var(--jade,#3fd9a4);font-family:var(--f-display,'Outfit',sans-serif)}.ds-tick__l{display:flex;align-items:center;padding:0 20px;background:var(--jade,#3fd9a4);color:var(--ink-900,#0a0b0d);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.ds-tick__i{display:flex;align-items:center;gap:10px;padding:0 26px;font-size:15px;color:var(--paper-dim,#c9d0d8);white-space:nowrap}.ds-tick__i b{color:var(--paper,#eef1f5)}.ds-tick__i em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--jade,#3fd9a4)}.ds-tick__i em.g{color:var(--gold,#d8b263)}.ds-tick .ds-mono{font-family:var(--f-mono,'JetBrains Mono',monospace);font-size:13px;color:var(--ink-200,#a8b1bc)}"
+    },
+    {
+      "name": "Screenshot Frame",
+      "kind": "card",
+      "refersTo": "shot-frame",
+      "description": "The model-viewer frame: slanted ink-850 well with a caption plate.",
+      "html": "<figure class=\"ds-shot\"><div class=\"ds-shot__img\"></div><figcaption><span class=\"ds-shot__pill\">Live site</span><span class=\"ds-shot__url\">racetodutchfirst.nl</span></figcaption></figure>",
+      "css": ".ds-shot{position:relative;margin:0;width:480px;height:280px}.ds-shot__img{width:100%;height:100%;background:var(--ink-850,#0e1014);outline:1px solid var(--ink-700,#1e2228);outline-offset:-1px;clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);}.ds-shot figcaption{position:absolute;left:0;bottom:0;display:flex;align-items:center;background:var(--ink-900,#0a0b0d);padding-right:22px;clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 100%, 0 100%);}.ds-shot__pill{padding:9px 14px;background:var(--ink-750,#171a1f);color:var(--ink-200,#a8b1bc);font:700 11px/1 var(--f-display,'Outfit',sans-serif);letter-spacing:.12em;text-transform:uppercase}.ds-shot__url{padding-left:12px;font:12px var(--f-mono,'JetBrains Mono',monospace);color:var(--ink-200,#a8b1bc)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Adventure Guide",
+    "overview": "bmiest's front door opens like WoW's Adventure Guide. A left column carries the name in poster caps, one lead line and the encounter list: the stream as the overview, then the four projects (overlay, Race to Dutch First, wishlist updater, design language). The stage on the right shows one entry at a time: its art at full stage height, a title, two lines of copy, an abilities row of flush label/value chips, and the loot, where Watch on Twitch (or the project's own link) is the slanted jade primary and the rest are slanted ink loot rows. The broadcast bug crowns the page and a kills ticker closes the first viewport edge to edge. Choosing an encounter wipes the art in along the family slant; every entry has its own hash.\n\nIt is the family's v2 language unchanged: flat near-black ink, Outfit 800 caps, jade as brand and selection, gold only for something earned, live-red only while the channel is live, right-edge slants on every chip, ribbon and button, flush square blocks for the bug, the language switch and the ticker, mono for compared numbers. The art is the work running: Shiftheal's render before the boss Kelderklasse is on, in the jade and void glow, and the projects' real screenshots in a slanted model-viewer frame. The design entry draws its specimen from the tokens it documents.\n\nConfirmed rejections (direction contract): the link-in-bio column, and the hero plus project-card-grid portfolio. Family standing preference: never a generic dark dashboard.",
+    "keyCharacteristics": [
+      "[family] Flat ink scale, Outfit + JetBrains Mono, jade + gold, from the overlay's tokens.css as a byte copy.",
+      "[family] Right-edge slant on ribbons, pills, buttons, chips and tiles; square corners everywhere else; bug, switch and ticker flush and square.",
+      "[family] Colour as meaning: jade = brand/live/selected, gold = earned, live-red = on air only, rose = late or failed.",
+      "[landing] The Adventure Guide: encounter list left, one entry on the stage, loot as the actions.",
+      "[landing] The work shown running: live LIVE state, live race standing, Shiftheal from Raider.IO, real screenshots.",
+      "[landing] Carries bmiest branding (the jade cast mark in the bug and footer), unlike the brand-neutral race site."
+    ],
+    "rules": [
+      {
+        "name": "The Gold Is Earned Rule",
+        "body": "[family] Gold marks something earned: here the race leader, Cutting Edge and a first Dutch kill. A tag, a hover, a \"progress\" state or a project label is never gold.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means On Air Rule",
+        "body": "[family] Broadcast red appears only while the channel is really live, and every red mark disappears when it is not. A failure is rose.",
+        "section": "colors"
+      },
+      {
+        "name": "The Jade Selects Rule",
+        "body": "[landing] The selected encounter is drawn by a jade outline and a jade subline, nothing else; hover only lifts the outline to ink-400 and focus to paper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Poster Voice Rule",
+        "body": "[family] Display and headlines are Outfit 800 uppercase with tight tracking; nothing else is that heavy except the bug, the buttons, the language switch and ability keys.",
+        "section": "typography"
+      },
+      {
+        "name": "The Compared Number Rule",
+        "body": "[family] A number a visitor compares is JetBrains Mono with tabular figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Ink Rule",
+        "body": "[family] Surfaces separate by tone and 1px lines, never by shadow or blur.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Slant Rule",
+        "body": "[family] Slants go down and to the right, on the trailing edge only, and a slanted element never also gets rounded corners.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** take colours, fonts and motion from tokens.css variables; tokens.css stays a byte copy of the overlay's.",
+      "**Do** keep gold for what is earned, jade for brand and selection, red for on air only.",
+      "**Do** show every project as it really runs: a real screenshot, a live value, or a specimen drawn from the tokens.",
+      "**Do** keep one primary per entry and put every other link in a loot row.",
+      "**Do** slant the trailing edge of buttons, loot rows, pills, chips and tiles; keep the bug, the switch and the ticker flush and square.",
+      "**Do** draw icons as inline SVG in one stroke family.",
+      "**Do** give every entry its own hash and make every block fall back to static content when its fetch fails.",
+      "**Do** ship every string in Dutch and English; game names are never translated.",
+      "**Do** keep the CSP: script-src 'self', no inline styles; set custom properties with `style.setProperty()` only."
+    ],
+    "donts": [
+      "**Don't** add drop shadows, rounded cards or blur.",
+      "**Don't** show LIVE, a live dot or any red unless DecAPI says the channel is live.",
+      "**Don't** use gold for tags, hover, progress or project labels.",
+      "**Don't** use text glyphs or emoji as icons.",
+      "**Don't** put a coloured side stripe on cards, rows or chips.",
+      "**Don't** build it as a link-in-bio column or a hero over a project-card grid.",
+      "**Don't** show the person behind bmiest: no real name, no day job, no reniersworx link."
+    ]
+  }
+}

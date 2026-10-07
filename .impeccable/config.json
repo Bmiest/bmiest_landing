@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-07T12:34:57.209Z",
+        "reason": "family component per Bmiest/bmiest-design DESIGN.md (ribbon 1px outline wrapper, flush ticker label, LIVE dot only while live, kills ticker with pause + reduced-motion fallback)"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "css/site.css"
+        ],
+        "createdAt": "2026-10-07T12:35:06.052Z",
+        "reason": "family component per Bmiest/bmiest-design DESIGN.md (LIVE dot only while live; kills ticker pauses on hover/focus, static under reduced motion)"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "css/site.css"
+        ],
+        "createdAt": "2026-10-07T12:35:06.060Z",
+        "reason": "family component per Bmiest/bmiest-design DESIGN.md (LIVE dot only while live; kills ticker pauses on hover/focus, static under reduced motion)"
+      },
+      {
+        "rule": "pulsing-dot",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-07T12:36:32.264Z",
+        "reason": "family component per Bmiest/bmiest-design DESIGN.md (LIVE dot shown only while DecAPI says live; kills ticker pauses on hover/focus, static under reduced motion)"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-07T12:36:32.271Z",
+        "reason": "family component per Bmiest/bmiest-design DESIGN.md (LIVE dot shown only while DecAPI says live; kills ticker pauses on hover/focus, static under reduced motion)"
+      }
+    ]
+  }
+}

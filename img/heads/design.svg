@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The family's slanted block (bmiest favicon) as an outline, with the ink ramp's three steps inside: the design language's own shape. -->
+  <path d="M3 4H29L24.5 28H3Z" fill="none" stroke="#3fd9a4" stroke-width="2.5" stroke-linejoin="miter"/>
+  <path d="M7 9H12V23H7Z" fill="#5b6470"/><path d="M13.5 9H18.5V23H13.5Z" fill="#818b98"/><path d="M20 9H24.5L22.2 23H20Z" fill="#c9d0d8"/>
+</svg>

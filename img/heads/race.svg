@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Race to Dutch First's mark (its favicon, reniersworx/racetodutchfirst site/favicon.svg) without its ink ground, so it sits on the tile: the Voortgang step line climbing to the finish block. -->
+  <path d="M2 28H10V20H18V12H24V8" fill="none" stroke="#3fd9a4" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M19 2H31L29 8H19Z" fill="#a8b1bc"/>
+</svg>

@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) publishes the static files as they are. The repo docs stay
+# out of the site; dot folders (.impeccable) are skipped by Jekyll already.
+exclude:
+  - README.md
+  - PRODUCT.md
+  - DESIGN.md
