@@ -84,6 +84,18 @@ function setupTabs(){
     });
   });
 
+  /* The hub's plates are links to the entries: on wide screens they switch the tab. */
+  document.querySelectorAll('.plate').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if(!WIDE.matches) return;
+      var i = tabs.findIndex(function(t){ return t.hash === a.hash; });
+      if(i < 0) return;
+      e.preventDefault();
+      select(i, true);
+      tabs[i].focus();
+    });
+  });
+
   window.addEventListener('hashchange', function(){
     var i = tabs.findIndex(function(a){ return a.hash === location.hash; });
     if(i >= 0 && WIDE.matches) select(i, false);
@@ -180,9 +192,10 @@ var title = null;
 function paintLive(){
   $('bugLive').hidden = !live;
   document.body.classList.toggle('is-live', live);
-  var btn = $('watchBtn');
-  btn.classList.toggle('btn--live', live);
-  $('watchLabel').textContent = live ? I.str('watchLive') || 'Live now · watch' : I.str('watch');
+  document.querySelectorAll('.js-watch').forEach(function(btn){ btn.classList.toggle('btn--live', live); });
+  document.querySelectorAll('.js-watch-label').forEach(function(n){
+    n.textContent = live ? I.str('watchLive') || 'Live now · watch' : I.str('watch');
+  });
   paintNext();
   $('hStreamA').textContent = t('hA');
   $('hStreamB').textContent = live ? t('hLive') : t('hOff');

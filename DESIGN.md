@@ -241,7 +241,7 @@ components:
 
 **Creative North Star: "The Adventure Guide"**
 
-bmiest's front door opens like WoW's Adventure Guide. A left column carries the name in poster caps, one lead line and the encounter list: the stream as the overview, then the four projects (overlay, Race to Dutch First, wishlist updater, design language). The stage on the right shows one entry at a time: its art at full stage height, a title, two lines of copy, an abilities row of flush label/value chips, and the loot, where Watch on Twitch (or the project's own link) is the slanted jade primary and the rest are slanted ink loot rows. The broadcast bug crowns the page and a kills ticker closes the first viewport edge to edge. Choosing an encounter wipes the art in along the family slant; every entry has its own hash.
+bmiest's front door opens like WoW's Adventure Guide. A left column carries the name in poster caps, one lead line and the encounter list: the Overview (the hub), the stream, then the four tools (overlay, Race to Dutch First, wishlist updater, design language). The page opens on the hub: the four tools as plates on one board, each a real shot that opens its entry, over "Built for the raid, by the raider" and the channel loot (Watch on Twitch, YouTube, Clips, GitHub). The tools lead as much as the stream (user, 2026-10-07). The stage on the right shows one entry at a time: its art at full stage height, a title, two lines of copy, an abilities row of flush label/value chips, and the loot, where Watch on Twitch (or the project's own link) is the slanted jade primary and the rest are slanted ink loot rows. The broadcast bug crowns the page and a kills ticker closes the first viewport edge to edge. Choosing an encounter wipes the art in along the family slant; every entry has its own hash.
 
 It is the family's v2 language unchanged: flat near-black ink, Outfit 800 caps, jade as brand and selection, gold only for something earned, live-red only while the channel is live, right-edge slants on every chip, ribbon and button, flush square blocks for the bug, the language switch and the ticker, mono for compared numbers. The art is the work running: Shiftheal's render before the boss Kelderklasse is on, in the jade and void glow, and the projects' real screenshots in a slanted model-viewer frame. The design entry draws its specimen from the tokens it documents.
 
@@ -251,7 +251,7 @@ Confirmed rejections (direction contract): the link-in-bio column, and the hero 
 - [family] Flat ink scale, Outfit + JetBrains Mono, jade + gold, from the overlay's tokens.css as a byte copy.
 - [family] Right-edge slant on ribbons, pills, buttons, chips and tiles; square corners everywhere else; bug, switch and ticker flush and square.
 - [family] Colour as meaning: jade = brand/live/selected, gold = earned, live-red = on air only, rose = late or failed.
-- [landing] The Adventure Guide: encounter list left, one entry on the stage, loot as the actions.
+- [landing] The Adventure Guide: encounter list left, one entry on the stage, loot as the actions; it opens on the hub board of the four tools.
 - [landing] The work shown running: live LIVE state, live race standing, Shiftheal from Raider.IO, real screenshots.
 - [landing] Carries bmiest branding (the jade cast mark in the bug and footer), unlike the brand-neutral race site.
 
@@ -321,9 +321,9 @@ The family's near-black ink ramp with one cool jade voice, one warm gold voice, 
 
 ## Layout
 
-[landing] One container, 1360px max, 24px gutters (16px under 720px, 12px under 400px). The bug bar is 92px tall (72px under 720px), the ticker 52px. From 1100px the guide is a two-column grid: the index column (300-400px) and the stage (the rest), 48px apart, filling exactly the first viewport between bug and ticker (at least 640px tall). The index stacks name, lead and the encounter list, the list pushed to the column's bottom; encounters are 66px tall, 8px apart. On the stage an entry is the art (the remaining height) over a body row of text left and loot right (40px apart); project art is inset 4% from the stage's left edge.
+[landing] One container, 1360px max, 24px gutters (16px under 720px, 12px under 400px). The bug bar is 92px tall (72px under 720px), the ticker 52px. From 1100px the guide is a two-column grid: the index column (300-400px) and the stage (the rest), 48px apart, filling exactly the first viewport between bug and ticker (at least 700px tall). The index stacks name, lead and the encounter list, the list pushed to the column's bottom; encounters are 54px tall, 8px apart (six of them). On the stage an entry is the art (the remaining height) over a body row of text left and loot right (40px apart); project art is inset 4% from the stage's left edge. The hub's body is one column with its loot as a row, and its board is positioned inside the art box so it takes exactly the height the text leaves: a 2 x 2 grid, 12px gaps.
 
-Below 1100px every entry is its own section, stacked 64px apart, and the list becomes a jump strip: 48px encounters in an auto-fill grid (160px minimum, 6px gaps; one column under 720px). The stream art is a 380-560px band (420px on phones) and comes after its loot; screenshots take 16:10; loot rows lay out in a wrapping row, then full-width stacked under 720px. Everything works at 350px (the bug's guild slot drops there).
+Below 1100px every entry is its own section, stacked 64px apart, and the list becomes a jump strip: 48px encounters in an auto-fill grid (160px minimum, 6px gaps; one column under 720px). The stream art is a 380-560px band (420px on phones) and comes after its loot; the hub likewise puts its heading and loot first, then the board as a 2 x 2 of 4:3 thumbnails (names only, 8px gaps under 720px); screenshots take 16:10; loot rows lay out in a wrapping row, then full-width stacked under 720px. Everything works at 350px (the bug's guild slot drops there).
 
 ## Elevation & Depth
 
@@ -334,7 +334,7 @@ Flat. No drop shadows. Depth comes from the ink ramp (ink-900 ground, ink-850 we
 
 ## Shapes
 
-[family] Corners are square. The signature is the right-edge slant, `clip-path: polygon(0 0, 100% 0, calc(100% - N) 100%, 0 100%)`. On this page N is 22px on the screenshot frame and the specimen panel, 12px on the primary button and loot rows, 11px on encounter and ribbon outlines and specimen role tiles, 10px on their inner bodies, encounter heads, ribbon accent blocks and the caption plate, 8px on ability values, 6px on pills, 5px on the footer mark, 4px on the journal heading's cap. Outlines are a slanted outer clip one pixel larger than the inner one. The only round thing is the LIVE dot. Ability keys, the bug, the language switch and the ticker are flush and square. Marks are drawn SVG (Twitch, clips, GitHub, out-arrow, check, cast) in one stroke family.
+[family] Corners are square. The signature is the right-edge slant, `clip-path: polygon(0 0, 100% 0, calc(100% - N) 100%, 0 100%)`. On this page N is 22px on the screenshot frame and the specimen panel, 12px on the primary button and loot rows, 11px on encounter and ribbon outlines and specimen role tiles, 10px on their inner bodies, encounter heads, ribbon accent blocks and the caption plate, 8px on ability values, 6px on pills, 5px on the footer mark, 4px on the journal heading's cap. Outlines are a slanted outer clip one pixel larger than the inner one. The only round thing is the LIVE dot. Ability keys, the bug, the language switch and the ticker are flush and square. Marks are drawn SVG (Twitch, YouTube, clips, GitHub, out-arrow, check, cast) in one stroke family.
 
 [landing] The stage wipe runs along the slant: the art enters from the right with a leading edge leaning 80px down and to the right (620ms, cubic-bezier(.16,1,.3,1)); the body rises 14px after 90ms.
 
@@ -360,6 +360,9 @@ The secondary action: a slanted ink-750 chip at the button's height and slant, l
 
 ### Abilities [landing]
 Flush 30px label/value chips: the key on ink-750 (label type at 800, ink-200), the value on ink-800 (ability-value type, paper) with an 8px trailing slant and ellipsis. Live values (next raid, the guild's current boss, the race leader, Shiftheal's spec and ilvl) replace static fallbacks; earned words in them go gold.
+
+### Tool plate [landing]
+The hub's link to a tool, the ribbon's construction at poster size: a 1px outline with a 16px trailing slant (ink-600; jade on hover and focus) around an ink-850 body (15px slant). The body is the tool's real shot (cover, from the top; it scales to 1.025 on hover, not under reduced motion) over a 56px ink-800 caption bar: a 56px head tile like the encounter's (head crop or the tool's mark at 26px), the name at 18px/700 (jade on hover) and an ink-200 one-liner at 13px. The design plate's shot is a capture of this page's own specimen panel. On wide screens a plate switches the tab; on phones it jumps to the section.
 
 ### Pills [family]
 Slanted ink-750 chips in label type, uppercase; jade text for "Demo mode" and Cutting Edge. On the screenshot caption plate a pill loses its slant and sits on an ink-900 plate beside the mono URL; the plate carries the slant.
