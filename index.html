@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://render.worldofwarcraft.com; connect-src https://decapi.me https://raider.io https://racetodutchfirst.nl; base-uri 'none'; form-action 'none'">
+<title>bmiest · World of Warcraft on Twitch</title>
+<meta name="description" content="bmiest: Mythic raiding with Kelderklasse on Twitch every Wednesday and Sunday, and the tools behind the stream: the overlay, Race to Dutch First, the wishlist updater and the design language.">
+<meta name="theme-color" content="#0a0b0d">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bmiest.be/">
+<meta property="og:title" content="bmiest · World of Warcraft on Twitch">
+<meta property="og:description" content="Mythic raiding with Kelderklasse, Wednesday and Sunday 20:00, and the tools behind the stream.">
+<meta property="og:image" content="https://bmiest.be/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/i18n.js" defer></script>
+<script src="js/bossart.js" defer></script>
+<script src="js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#guide" data-i18n="skip">Skip to the guide</a>
+
+<!-- Drawn marks, one stroke family. -->
+<svg class="vh" aria-hidden="true" focusable="false">
+  <symbol id="i-twitch" viewBox="0 0 24 24"><path d="M4 3h17v11l-5 5h-4l-3 3H7v-3H3V7zM6 5v11h3v3l3-3h4l3-3V5zm5 3h2v5h-2zm5 0h2v5h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-clips" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM5 7v10h14V7zm5 2 5 3-5 3z" fill="currentColor"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z" fill="currentColor"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12.5 5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></symbol>
+  <symbol id="i-cast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><path d="M7.4 7.4a6.5 6.5 0 0 0 0 9.2M16.6 7.4a6.5 6.5 0 0 1 0 9.2M4.6 4.6a10.5 10.5 0 0 0 0 14.8M19.4 4.6a10.5 10.5 0 0 1 0 14.8" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><path d="M2 4h20v4H2zM2 16h20v4H2z" fill="currentColor"/><path d="M3 9.5h18v5H3z" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-steps" viewBox="0 0 24 24"><path d="M2 20h5v-5h5v-5h5V5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/><path d="M17 2h5v5h-5z" fill="currentColor"/></symbol>
+  <symbol id="i-mark" viewBox="0 0 24 24"><path d="M5 2h14v20l-7-5-7 5z" fill="currentColor"/></symbol>
+  <symbol id="i-slant" viewBox="0 0 24 24"><path d="M2 3h20l-4 18H2z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="top wrap">
+  <div class="bug">
+    <span class="bug__live" id="bugLive" hidden><i class="live-dot"></i><span data-i18n="live">Live</span></span>
+    <span class="bug__mark" aria-hidden="true"><svg><use href="#i-cast"/></svg></span>
+    <a class="bug__name" href="https://www.twitch.tv/bmiest">bmiest</a>
+    <span class="bug__slot">Kelderklasse<span class="bug__realm"> · EU-Draenor</span></span>
+    <span class="bug__day" data-i18n="bugDay">Wed + Sun 20:00</span>
+  </div>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+  </div>
+</header>
+
+<main class="guide wrap" id="guide">
+  <!-- Left: who, and the encounter list. -->
+  <div class="index">
+    <h1 class="poster index__name">bmiest</h1>
+    <p class="index__lead" data-i18n="lead">World of Warcraft raider on Twitch. Mythic progression with Kelderklasse, and the tools behind the stream, built by hand.</p>
+
+    <nav class="journal" aria-labelledby="journalLabel">
+      <h2 class="journal__label" id="journalLabel" data-i18n="journal">Adventure Guide</h2>
+      <ol class="journal__list" id="journal">
+        <li><a class="enc" id="tab-stream" href="#stream" aria-current="true">
+          <span class="enc__bar"><span class="enc__in">
+            <span class="enc__head enc__head--live"><img src="img/heads/stream.png" width="128" height="128" alt=""></span>
+            <span class="enc__t"><span class="enc__n" data-i18n="e.stream">The stream</span><span class="enc__s" id="encStreamSub" data-i18n="e.stream.s">Wed + Sun · 20:00</span></span>
+          </span></span>
+        </a></li>
+        <li><a class="enc" id="tab-overlay" href="#overlay">
+          <span class="enc__bar"><span class="enc__in">
+            <span class="enc__head"><img src="img/heads/overlay.png" width="128" height="128" alt=""></span>
+            <span class="enc__t"><span class="enc__n" data-i18n="e.overlay">Stream overlay</span><span class="enc__s">streamoverlay.bmiest.be</span></span>
+          </span></span>
+        </a></li>
+        <li><a class="enc" id="tab-race" href="#race">
+          <span class="enc__bar"><span class="enc__in">
+            <span class="enc__head enc__head--mark"><img src="img/heads/race.svg" width="32" height="32" alt=""></span>
+            <span class="enc__t"><span class="enc__n">Race to Dutch First</span><span class="enc__s">racetodutchfirst.nl</span></span>
+          </span></span>
+        </a></li>
+        <li><a class="enc" id="tab-wishlist" href="#wishlist">
+          <span class="enc__bar"><span class="enc__in">
+            <span class="enc__head enc__head--mark"><img src="img/heads/wishlist.svg" width="32" height="32" alt=""></span>
+            <span class="enc__t"><span class="enc__n" data-i18n="e.wishlist">Wishlist updater</span><span class="enc__s">WoWAudit · QE Live</span></span>
+          </span></span>
+        </a></li>
+        <li><a class="enc" id="tab-design" href="#design">
+          <span class="enc__bar"><span class="enc__in">
+            <span class="enc__head enc__head--mark"><img src="img/heads/design.svg" width="32" height="32" alt=""></span>
+            <span class="enc__t"><span class="enc__n" data-i18n="e.design">Design language</span><span class="enc__s">bmiest design v2</span></span>
+          </span></span>
+        </a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Right: one entry at a time on wide screens, all of them stacked on phones. -->
+  <div class="stage" id="stage">
+
+    <article class="entry entry--stream" id="stream" aria-labelledby="h-stream">
+      <div class="art art--char" aria-hidden="true">
+        <div class="glow glow--void"></div>
+        <div class="glow glow--jade"></div>
+        <div class="boss" id="boss"></div>
+        <div class="fig"><img class="fig__img" id="figImg" src="https://render.worldofwarcraft.com/eu/character/ragnaros/158/106746782-main-raw.png" alt="" decoding="async"></div>
+      </div>
+      <div class="entry__body">
+        <div class="entry__text">
+          <h2 class="entry__h" id="h-stream"><span id="hStreamA">Raid night,</span> <em id="hStreamB">Wed + Sun</em></h2>
+          <p class="entry__p" data-i18n="p.stream">Mythic progression with Kelderklasse, healing as Shiftheal, the Holy Priest. The race to Dutch first runs on screen all night.</p>
+          <p class="entry__title" id="streamTitle" hidden></p>
+          <ul class="abil">
+            <li><span class="abil__k" data-i18n="a.next">Next raid</span><span class="abil__v" id="nextRaid">Wed + Sun 20:00</span></li>
+            <li><span class="abil__k" data-i18n="a.on">Now on</span><span class="abil__v" id="nowOn">The Venomous Abyss</span></li>
+            <li><span class="abil__k">Shiftheal</span><span class="abil__v" id="charLine">Holy Priest</span></li>
+          </ul>
+        </div>
+        <ul class="loot">
+          <li><a class="btn" id="watchBtn" href="https://www.twitch.tv/bmiest"><svg aria-hidden="true"><use href="#i-twitch"/></svg><span id="watchLabel" data-i18n="watch">Watch on Twitch</span></a></li>
+          <li><a class="drop" href="https://www.twitch.tv/bmiest/clips"><svg aria-hidden="true"><use href="#i-clips"/></svg><span data-i18n="clips">Clips</span></a></li>
+          <li><a class="drop" href="https://github.com/Bmiest"><svg aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry entry--project" id="overlay" aria-labelledby="h-overlay">
+      <figure class="art art--shot">
+        <img src="img/shots/overlay.webp" width="1440" height="810" alt="The starting-soon scene of the overlay in demo mode: Shiftheal and Bhikhu either side of a countdown, with the raid schedule, links and recent events in bands below." data-i18n-alt="alt.overlay" loading="lazy" decoding="async">
+        <figcaption><span class="pill pill--jade" data-i18n="cap.demo">Demo mode</span><span class="shot__url">streamoverlay.bmiest.be</span></figcaption>
+      </figure>
+      <div class="entry__body">
+        <div class="entry__text">
+          <h2 class="entry__h" id="h-overlay" data-i18n="e.overlay">Stream overlay</h2>
+          <p class="entry__p" data-i18n="p.overlay">The OBS overlay this channel runs on: full-width bands around an ultrawide game window, a raid card fed by Warcraft Logs and Raider.IO, and fireworks when a boss dies.</p>
+          <ul class="abil">
+            <li><span class="abil__k" data-i18n="a.canvas">Canvas</span><span class="abil__v">2560 × 1440</span></li>
+            <li><span class="abil__k" data-i18n="a.data">Data</span><span class="abil__v">WCL · Raider.IO · StreamElements</span></li>
+            <li><span class="abil__k" data-i18n="a.licence">Licence</span><span class="abil__v">MIT</span></li>
+          </ul>
+        </div>
+        <ul class="loot">
+          <li><a class="btn btn--quiet" href="https://streamoverlay.bmiest.be/"><span data-i18n="open.overlay">See every screen</span><svg aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a class="drop" href="https://github.com/Bmiest/bmiest_wow_streaming_theme"><svg aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="source">Source</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry entry--project" id="race" aria-labelledby="h-race">
+      <figure class="art art--shot">
+        <img src="img/shots/race.webp" width="1440" height="900" alt="Race to Dutch First: the question 'Wie haalt als eerste Cutting Edge?' over the standings of the Dutch guilds, with the boss they are fighting behind it." data-i18n-alt="alt.race" loading="lazy" decoding="async">
+        <figcaption><span class="pill" data-i18n="cap.live">Live site</span><span class="shot__url">racetodutchfirst.nl</span></figcaption>
+      </figure>
+      <div class="entry__body">
+        <div class="entry__text">
+          <h2 class="entry__h" id="h-race">Race to Dutch First</h2>
+          <p class="entry__p" data-i18n="p.race">Which Dutch guild reaches Cutting Edge first? A live tracker for every Dutch-speaking guild, built from Raider.IO and Warcraft Logs, refreshed every half hour on raid nights.</p>
+          <ul class="abil">
+            <li><span class="abil__k" data-i18n="a.leader">Standing</span><span class="abil__v" id="raceLeader" data-i18n="v.standing">live on racetodutchfirst.nl</span></li>
+            <li><span class="abil__k" data-i18n="a.guilds">Guilds</span><span class="abil__v" id="raceGuilds" data-i18n="v.allDutch">every Dutch guild</span></li>
+            <li><span class="abil__k" data-i18n="a.refresh">Refresh</span><span class="abil__v" data-i18n="v.refresh">30 min on raid nights</span></li>
+          </ul>
+        </div>
+        <ul class="loot">
+          <li><a class="btn btn--quiet" href="https://racetodutchfirst.nl/"><span data-i18n="open.race">Follow the race</span><svg aria-hidden="true"><use href="#i-out"/></svg></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry entry--project" id="wishlist" aria-labelledby="h-wishlist">
+      <figure class="art art--shot">
+        <img src="img/shots/wishlist.webp" width="1440" height="900" alt="The wishlist dashboard: tonight's raid at 20:00, the upgrades each boss can drop for Shiftheal, and the history of runs." data-i18n-alt="alt.wishlist" loading="lazy" decoding="async">
+        <figcaption><span class="pill" data-i18n="cap.live">Live site</span><span class="shot__url">wishlistupdater.bmiest.be</span></figcaption>
+      </figure>
+      <div class="entry__body">
+        <div class="entry__text">
+          <h2 class="entry__h" id="h-wishlist" data-i18n="e.wishlist">Wishlist updater</h2>
+          <p class="entry__p" data-i18n="p.wishlist">Fills in your WoWAudit wishlist from the daily QE Live reports, because everyone forgets before raid and the officers get mad. A dashboard shows what each boss drops for you tonight.</p>
+          <ul class="abil">
+            <li><span class="abil__k" data-i18n="a.runs">Runs</span><span class="abil__v" data-i18n="v.daily">daily, on GitHub Actions</span></li>
+            <li><span class="abil__k" data-i18n="a.covers">Covers</span><span class="abil__v">Heroic · Mythic · M+</span></li>
+            <li><span class="abil__k" data-i18n="a.for">For</span><span class="abil__v" data-i18n="v.anyGuild">any WoWAudit guild</span></li>
+          </ul>
+        </div>
+        <ul class="loot">
+          <li><a class="btn btn--quiet" href="https://wishlistupdater.bmiest.be/"><span data-i18n="open.wishlist">Open the dashboard</span><svg aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a class="drop" href="https://github.com/Bmiest/bmiest_wowaudit_wishlist_updater"><svg aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="source">Source</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry entry--project" id="design" aria-labelledby="h-design">
+      <!-- The specimen is drawn by this page from the same tokens.css it documents. -->
+      <figure class="art art--spec">
+        <div class="spec">
+          <div class="spec__ramp" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <ul class="spec__roles">
+            <li class="spec__role spec__role--jade"><b>Jade</b><span data-i18n="r.jade">live, brand, OK</span></li>
+            <li class="spec__role spec__role--gold"><b data-i18n="r.goldN">Gold</b><span data-i18n="r.gold">only when earned</span></li>
+            <li class="spec__role spec__role--red"><b data-i18n="r.redN">Red</b><span data-i18n="r.red">on air, nothing else</span></li>
+            <li class="spec__role spec__role--rose"><b>Rose</b><span data-i18n="r.rose">late or failed</span></li>
+          </ul>
+          <div class="spec__parts" aria-hidden="true">
+            <span class="rib spec__rib"><span class="rib__bar"><span class="rib__in"><span class="rib__acc mono">1</span><span class="rib__val">Kelderklasse</span></span></span></span>
+            <span class="pill pill--jade">Cutting Edge</span>
+            <span class="spec__type"><span class="poster">Aa</span><span class="mono">6/8</span></span>
+          </div>
+        </div>
+        <figcaption><span class="pill" data-i18n="cap.drawn">Drawn from tokens.css</span><span class="shot__url">Bmiest/bmiest-design</span></figcaption>
+      </figure>
+      <div class="entry__body">
+        <div class="entry__text">
+          <h2 class="entry__h" id="h-design" data-i18n="e.design">Design language</h2>
+          <p class="entry__p" data-i18n="p.design">One language for the overlay, the race and the wishlist: flat ink, slanted edges, jade for live and gold only when it's earned. This page is built from it too.</p>
+          <ul class="abil">
+            <li><span class="abil__k" data-i18n="a.type">Type</span><span class="abil__v">Outfit · JetBrains Mono</span></li>
+            <li><span class="abil__k" data-i18n="a.shape">Shape</span><span class="abil__v" data-i18n="v.shape">one slant, trailing edge</span></li>
+            <li><span class="abil__k" data-i18n="a.used">Used by</span><span class="abil__v" data-i18n="v.used">3 products + this page</span></li>
+          </ul>
+        </div>
+        <ul class="loot">
+          <li><a class="btn btn--quiet" href="https://github.com/Bmiest/bmiest-design/blob/main/DESIGN.md"><span data-i18n="open.design">Read DESIGN.md</span><svg aria-hidden="true"><use href="#i-out"/></svg></a></li>
+          <li><a class="drop" href="https://github.com/Bmiest/bmiest-design"><svg aria-hidden="true"><use href="#i-github"/></svg><span data-i18n="source">Source</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- Kelderklasse's Mythic kills this tier, newest first (Raider.IO; first Dutch kills from the race). -->
+<section class="ticker" id="ticker" aria-labelledby="tickerLabel" hidden>
+  <h2 class="ticker__label" id="tickerLabel"><span data-i18n="kills">Mythic kills</span></h2>
+  <div class="ticker__track"><ul class="ticker__list" id="tickerList"></ul></div>
+</section>
+
+<footer class="foot wrap">
+  <p class="foot__sig"><span class="foot__mark" aria-hidden="true"><svg><use href="#i-cast"/></svg></span><span data-i18n="foot">bmiest · built by hand in the bmiest design language</span></p>
+  <ul class="foot__links">
+    <li><a href="https://www.twitch.tv/bmiest">Twitch</a></li>
+    <li><a href="https://www.twitch.tv/bmiest/clips" data-i18n="clips">Clips</a></li>
+    <li><a href="https://github.com/Bmiest">GitHub</a></li>
+    <li><a href="https://github.com/Bmiest/bmiest_landing" data-i18n="pageSource">This page's source</a></li>
+  </ul>
+</footer>
+</body>
+</html>

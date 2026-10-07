@@ -1,0 +1,8 @@
+# Impeccable working files: review captures, decision mocks, per-machine config.
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/live/
+.impeccable/config.local.json
+__pycache__/
+.impeccable/hook.cache.json
+.impeccable/questions/
