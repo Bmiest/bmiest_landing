@@ -73,7 +73,7 @@ var NL = {
   'v.used': '3 producten + deze pagina',
   'open.design': 'Lees DESIGN.md',
   'kills': 'Mythic kills',
-  'foot': 'bmiest · zelf gebouwd in de bmiest-designtaal',
+  'foot': 'bmiest · gebouwd in de bmiest-designtaal',
   'pageSource': 'Broncode van deze pagina'
 };
 
